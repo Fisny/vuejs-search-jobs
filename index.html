@@ -13,12 +13,13 @@
 </head>
 <body>
     <div id="app">
-        
+
         <!-- first job -->
         <div class="job-list">
             <div class="job-titles" v-for="lavoro in jobs">
                 <div class="logo-job-list">
-                    {{lavoro.logo}}
+                    <img :src="jobs.logo" alt="logo">
+                    
                 </div>
 
                 <h1 class="company-job-list">
@@ -29,15 +30,19 @@
                     Position: {{lavoro.position}}
                 </h3>
 
-                <p class="description-job-list">
+                <p class="work-description">
                     Work Description:
-                    <br>
-                    {{lavoro.description}}
+                    <div class="description-job-list">
+                        {{lavoro.description}}
+                    </div>
+                    
                 </p>
 
-                <h5 class="foot-job-list">
-                    {{lavoro.created_at}} {{lavoro.city}} {{lavoro.contract}}
-                </h5>
+                <div class="foot-job-list">
+                    <h5>{{lavoro.created_at}}</h5>
+                    <h5>{{lavoro.city}}</h5>
+                    <h5>{{lavoro.contract}}</h5>   
+                </div>
                 
             </div>
 
@@ -47,6 +52,8 @@
 
 
         </div>
+
+        
     </div>
     <script src="js/script.js"></script>
 </body>
